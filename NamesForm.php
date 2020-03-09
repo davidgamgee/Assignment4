@@ -1,9 +1,12 @@
 <?php
-if(isset($_POST))
-    {   require_once 'addNameProc.php';
-        $addName = new AddNamesProc();
-        $output = $addName->addClearNames($_POST);
-    } 
+if(isset($_POST)){
+    require_once 'addNameProc.php';
+    $addName = new AddNamesProc();
+    $output = $addName->addClearNames($_POST); 
+    }
+else{
+    $output = "";
+    }
 ?>
 
 <!doctype html>
@@ -25,9 +28,9 @@ if(isset($_POST))
     <form method="post" action="NamesForm.php">
 
     <button type="submit" name="newName" class="btn btn-primary">Add Name</button>
-    <button type="reset" name="clear" class="btn btn-primary">Clear Names</button>
+    <button type="submit" name="clear" class="btn btn-primary">Clear Names</button>
     <br>
-    <label>Name:<input type="text" class="form-control" name="name"size="80"></label>
+    <label>Name:<input type="text" class="form-control" name="name" size="80"></label>
    
 
     <textarea style="height: 500px;" type="password" class="form-control" id="nameList" name="nameList">
